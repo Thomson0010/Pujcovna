@@ -1,0 +1,14 @@
+<h1>Seznam lodi</h1>
+
+<% boats.forEach(boat => { %>
+  <div>
+    <h2>
+      <a href="/boats/<%= boat._id %>">
+        <%= boat.name %>
+      </a>
+    </h2>
+    <p>Typ: <%= boat.type %></p>
+    <p>Kapacita: <%= boat.capacity %> osob</p>
+  </div>
+  <hr>
+<% }) %>
