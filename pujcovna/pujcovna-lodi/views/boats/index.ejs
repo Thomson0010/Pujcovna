@@ -2,13 +2,15 @@
   <form action="/logout" method="POST">
     <button>Odhlasit se</button>
   </form>
-  <p>Prihlaseny: <%= user.username %></p>
+<p>Uživatel: <%= user.username %></p>
+  <a href="/rentals">Zadosti o pujceni</a> |
+  <a href="/boats/create">Pridat lod</a>
 <% } else { %>
   <a href="/login">Prihlasit se</a> |
   <a href="/register">Registrovat se</a>
 <% } %>
 
-<h1>Seznam lodi</h1>
+<h1>Pujcovna lodi</h1>
 
 <% boats.forEach(boat => { %>
   <div>
@@ -19,6 +21,9 @@
     </h2>
     <p>Typ: <%= boat.type %></p>
     <p>Kapacita: <%= boat.capacity %> osob</p>
+    <% if (boat.image) { %>
+      <img src="/uploads/<%= boat.image %>" width="200">
+    <% } %>
   </div>
   <hr>
 <% }) %>

@@ -16,6 +16,10 @@ const boatSchema = new mongoose.Schema({
   description: {
     type: String,
     required: true
+  },
+  image: {
+    type: String,
+    default: ""
   }
 }, { timestamps: true });
 

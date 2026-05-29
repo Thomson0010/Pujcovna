@@ -1,0 +1,27 @@
+<h1>Zadosti o pujceni</h1>
+
+<% requests.forEach(request => { %>
+  <div>
+    <h3><%= request.boat.name %></h3>
+    <p>Zadatel: <%= request.applicantName %></p>
+    <p>Email: <%= request.email %></p>
+    <p>Zprava: <%= request.message %></p>
+    <p>Stav: 
+      <% if (request.status === "pending") { %>
+        Ceka na vyrizeni
+      <% } else if (request.status === "approved") { %>
+        Schvaleno
+      <% } else { %>
+        Zamitnuto
+      <% } %>
+    </p>
+    <form action="/rentals/<%= request._id %>/approve" method="POST">
+      <button>Schvalit</button>
+    </form>
+    <form action="/rentals/<%= request._id %>/reject" method="POST">
+      <button>Zamitnout</button>
+    </form>
+    <a href="/boats">Zpet</a>
+  </div>
+  <hr>
+<% }) %>

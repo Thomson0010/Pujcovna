@@ -1,0 +1,17 @@
+<h1>Upravit lod</h1>
+
+<form action="/boats/<%= boat._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+  <input type="text" name="name" value="<%= boat.name %>" required>
+  <br><br>
+  <input type="text" name="type" value="<%= boat.type %>" required>
+  <br><br>
+  <input type="number" name="capacity" value="<%= boat.capacity %>" required>
+  <br><br>
+  <textarea name="description" required><%= boat.description %></textarea>
+  <br><br>
+  <input type="file" name="image">
+  <br><br>
+  <button type="submit">Ulozit zmeny</button>
+</form>
+
+<p><a href="/boats/<%= boat._id %>">Zpet</a></p>

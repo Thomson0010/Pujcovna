@@ -1,0 +1,17 @@
+<h1>Pridat lod</h1>
+
+<form action="/boats" method="POST" enctype="multipart/form-data">
+  <input type="text" name="name" placeholder="Nazev lodi" required>
+  <br><br>
+  <input type="text" name="type" placeholder="Typ lodi" required>
+  <br><br>
+  <input type="number" name="capacity" placeholder="Kapacita (pocet osob)" required>
+  <br><br>
+  <textarea name="description" placeholder="Popis" required></textarea>
+  <br><br>
+  <input type="file" name="image">
+  <br><br>
+  <button type="submit">Ulozit</button>
+</form>
+
+<p><a href="/boats">Zpet</a></p>
